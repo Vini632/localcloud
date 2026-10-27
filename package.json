@@ -1,0 +1,15 @@
+{
+  "name": "localcloud",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Servidor pessoal de arquivos para a rede local",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "public": "node public-runner.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

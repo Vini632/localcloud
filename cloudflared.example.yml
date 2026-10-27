@@ -1,0 +1,7 @@
+tunnel: SEU_TUNNEL_ID
+credentials-file: C:\Users\SEU_USUARIO\.cloudflared\SEU_TUNNEL_ID.json
+
+ingress:
+  - hostname: localcloud.seudominio.com
+    service: http://127.0.0.1:4173
+  - service: http_status:404

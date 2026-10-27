@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080a09" />
+  <title>LocalCloud</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Ir para a pasta principal">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 18.5h10.5a4.5 4.5 0 0 0 .4-8.98A6.5 6.5 0 0 0 5.5 8.3 5.1 5.1 0 0 0 7 18.5Z"/><path d="m9 14 3-3 3 3M12 11v6"/></svg></span>
+        <span><b>LocalCloud</b><small>sua nuvem, aqui perto</small></span>
+      </a>
+      <nav class="tool-links" aria-label="Ferramentas futuras">
+        <button class="tool-link light" data-coming-soon="IDE" type="button"><span aria-hidden="true">&lt;/&gt;</span> IDE</button>
+        <button class="tool-link green" data-coming-soon="PowerShell" type="button"><span aria-hidden="true">&gt;_</span> PowerShell</button>
+      </nav>
+      <div class="status"><span></span> rede local</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">ARQUIVOS</p>
+          <h1>Seu espaço.</h1>
+          <p id="summary">Carregando seus arquivos…</p>
+        </div>
+        <div class="actions">
+          <button class="button secondary" id="new-folder"><span>＋</span> Nova pasta</button>
+          <label class="button primary" for="file-input"><span>↑</span> Enviar arquivos</label>
+          <input id="file-input" type="file" multiple hidden />
+        </div>
+      </section>
+
+      <nav class="breadcrumbs" id="breadcrumbs" aria-label="Caminho atual"></nav>
+
+      <section class="dropzone" id="dropzone" aria-label="Solte arquivos aqui">
+        <div class="drop-icon">↓</div>
+        <strong>Solte os arquivos para enviar</strong>
+        <span>eles serão salvos nesta pasta</span>
+      </section>
+
+      <section class="files-panel">
+        <div class="panel-head">
+          <span>Nome</span><span>Tamanho</span><span>Modificado</span><span></span>
+        </div>
+        <div id="file-list" class="file-list" aria-live="polite"></div>
+        <div id="empty" class="empty" hidden>
+          <div class="empty-art"><svg viewBox="0 0 120 90"><path d="M13 30h36l9 10h49v39H13z"/><path d="M13 30V18h32l9 12"/></svg></div>
+          <h2>Esta pasta está vazia</h2>
+          <p>Envie um arquivo ou arraste-o para cá.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="upload-tray" id="upload-tray" hidden>
+    <div><strong id="upload-title">Enviando…</strong><span id="upload-detail"></span></div>
+    <div class="progress"><i id="progress-bar"></i></div>
+  </div>
+
+  <dialog id="name-dialog">
+    <form method="dialog">
+      <div class="dialog-icon" id="dialog-icon">＋</div>
+      <h2 id="dialog-title">Nova pasta</h2>
+      <p id="dialog-copy">Dê um nome para organizar seus arquivos.</p>
+      <label><span>Nome</span><input id="name-input" autocomplete="off" maxlength="120" required /></label>
+      <div class="dialog-actions"><button value="cancel" class="button secondary">Cancelar</button><button id="dialog-confirm" value="default" class="button primary">Criar</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="coming-dialog" class="coming-dialog">
+    <form method="dialog">
+      <div class="dialog-icon terminal-icon" aria-hidden="true">&gt;_</div>
+      <p class="dialog-kicker">PRÓXIMO MÓDULO</p>
+      <h2 id="coming-title">IDE — em breve</h2>
+      <p id="coming-copy">Essa ferramenta fará parte do LocalCloud em uma próxima versão.</p>
+      <div class="dialog-actions"><button value="close" class="button primary">Entendi</button></div>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>

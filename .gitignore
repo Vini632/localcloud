@@ -1,0 +1,7 @@
+storage/
+node_modules/
+.DS_Store
+.localcloud-password
+cloudflared.yml
+outputs/
+work/
